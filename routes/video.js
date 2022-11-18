@@ -18,11 +18,15 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const selectedVidId = req.params.id;
-  res.send(
-    videoList.find(selectedVid => {
-      return selectedVidId === selectedVid.id;
-    })
-  )
+  const selectedVideo = videoList.find(videoId => {
+    return selectedVidId === videoId.id;
+  });
+  if(selectedVideo === undefined) {
+    res.status(404).send("ID could not be located");
+  }
+  else {
+    res.send(selectedVideo);
+  }
 })
 
 module.exports = router;
