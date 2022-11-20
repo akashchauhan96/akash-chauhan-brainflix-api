@@ -12,5 +12,5 @@ app.use('/videos', videoList);
 
 
 app.listen(PORT, () => {
-  console.log("Hello Beautiful!");
+  console.log(`Hello Beautiful! ${PORT}`);
 });
