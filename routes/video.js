@@ -4,10 +4,7 @@ const router = express.Router();
 const videoList = require('../data/video-details.json');
 const path = require('path');
 
-const videoFilePath = path.basename(__dirname);
-
-console.log(videoFilePath);
-console.log(__dirname);
+const videoFilePath = path.join(__dirname, '../data/video-details.json');
 
 router
   .route("/")
@@ -23,9 +20,9 @@ router
       })
     )
   })
-  .post((req, res) => {
-    const vidList = fs.readFileSync()
-  })
+  // .post((req, res) => {
+  //   const vidList = fs.readFileSync(videoFilePath)
+  // })
 
 router.get('/:id', (req, res) => {
   const selectedVidId = req.params.id;
