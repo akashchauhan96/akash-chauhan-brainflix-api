@@ -14,6 +14,4 @@ app.use(express.static("public"));
 app.use('/videos', videoList);
 
 
-app.listen(PORT, () => {
-  console.log(`Hello Beautiful!`);
-});
+app.listen(PORT);
