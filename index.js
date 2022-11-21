@@ -8,9 +8,12 @@ const cors = require('cors');
 const PORT = process.env.PORT;
 
 app.use(cors());
+app.use(express.json());
+app.use(express.static("public"));
+
 app.use('/videos', videoList);
 
 
 app.listen(PORT, () => {
-  console.log(`Hello Beautiful! ${PORT}`);
+  console.log(`Hello Beautiful!`);
 });
